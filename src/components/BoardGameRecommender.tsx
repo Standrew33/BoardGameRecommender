@@ -90,7 +90,7 @@ export default function BoardGameRecommender() {
             transition={{ duration: 0.3 }}
           >
             <p className="mb-2 text-lg">{steps[step].question}</p>
-            <Select onValueChange={steps[step].onChange}>
+            <Select value={steps[step].value} onValueChange={steps[step].onChange}>
               <SelectTrigger>
                 <SelectValue placeholder="Выберите вариант" />
               </SelectTrigger>
