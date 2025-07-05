@@ -5,9 +5,7 @@ import { Button } from "../ui/button";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../ui/select";
 import { Progress } from "../ui/progress";
 
-const games = [
-  // ... список игр с полем image: "" ...
-];
+import games from "../data/games";
 
 export default function BoardGameRecommender() {
   const [step, setStep] = useState(0);
