@@ -90,16 +90,18 @@ export default function BoardGameRecommender() {
             transition={{ duration: 0.3 }}
           >
             <p className="mb-2 text-lg">{steps[step].question}</p>
-            <Select value={steps[step].value} onValueChange={steps[step].onChange}>
-              <SelectTrigger>
-                <SelectValue placeholder="Выберите вариант" />
-              </SelectTrigger>
-              <SelectContent>
-                {steps[step].options.map((opt) => (
-                  <SelectItem key={opt} value={opt}>{opt}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <select
+                className="border p-2 rounded w-full"
+                value={steps[step].value}
+                onChange={(e) => steps[step].onChange(e.target.value)}
+            >
+              <option value="">Выберите вариант</option>
+              {steps[step].options.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+              ))}
+            </select>
           </motion.div>
         ) : (
           <motion.div
